@@ -1,0 +1,2 @@
+- Compiler for C/C++/Objective-C:编译器
+- Code Signing Identity  设置签名用的证书

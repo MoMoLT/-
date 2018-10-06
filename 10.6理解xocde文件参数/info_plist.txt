@@ -1,0 +1,2 @@
+Bundle version 是工程的General（通用选项）里的build（内部版本号）
+Bundle versions string, short	是General的Version(外部版本号)

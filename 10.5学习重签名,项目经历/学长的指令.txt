@@ -1,0 +1,58 @@
+1.进入导出包
+2.在导出包目录下，用resign指令混淆ipa包，resign ./ -num 3333
+3.打开ipa解压文件Payload，可能要修改一些问题，如找到app下的info.plist，修改权限问题，内部版本号，外部版本号绝对不能动！！！
+4.然后压缩文件Payload, zip -r xxx.ipa. Payload/		前面是你要压缩成ipa的包名
+--- 修改了info.plist权限介绍，加入了定位权限
+5.开始重签名，有两个方式，一个fastlane sigh resign这个简单命令，
+一个可视化iReSign。
+用fastlane sigh, resign遇到error 99046错误，那么换iReSign
+
+6.用iReSign,输入codesign --display --entitlements - ipa解压包/xxx.app
+获取xml代码，然后创建文件，复制进去。
+iReSign界面
+第一行，  混淆的ipa包
+第二行，  resign混淆后，在导出包目录生成的配置文件
+第三行，	xml代码文件
+第四行，  不做修改
+第五行，	选择正确的证书
+
+
+
+ComputerdeMacBook-Pro:五朵金花 heart$ cd /Users/heart/Desktop/新五朵金花 
+ComputerdeMacBook-Pro:新五朵金花 heart$ resign ./ -num 3333\
+ComputerdeMacBook-Pro:新五朵金花 heart$ zip -r _wool_preparation_Knows_unless.ipa Payload/
+
+ComputerdeMacBook-Pro:新五朵金花 heart$ codesign —display —entitlements - Payload/
+
+ComputerdeMacBook-Pro:新五朵金花 heart$ codesign —display —entitlements - Payload/_wool_preparation_Knows_unless.app/
+Usage: codesign -s identity [-fv*] [-o flags] [-r reqs] [-i ident] path ... # sign
+       codesign -v [-v*] [-R=<req string>|-R <req file path>] path|[+]pid ... # verify
+       codesign -d [options] path ... # display contents
+       codesign -h pid ... # display hosting paths
+ComputerdeMacBook-Pro:新五朵金花 heart$ codesign --display --entitlements - Payload/_wool_preparation_Knows_unless.app/
+Executable=/Users/heart/Desktop/新五朵金花/Payload/_wool_preparation_Knows_unless.app/_wool_preparation_Knows_unless
+
+
+??qq-<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>application-identifier</key>
+	<string>J2RD563F2X.com.xingwuduo.jinghua</string>
+	<key>beta-reports-active</key>
+	<true/>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:zj473z.openinstall.io</string>
+	</array>
+	<key>com.apple.developer.team-identifier</key>
+	<string>J2RD563F2X</string>
+	<key>get-task-allow</key>
+	<false/>
+</dict>
+</plist>
+
+
+
+ComputerdeMacBook-Pro:新五朵金花 heart$ touch alksdjfaldfj
+ComputerdeMacBook-Pro:新五朵金花 heart$ open alksdjfaldfj 

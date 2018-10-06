@@ -1,0 +1,19 @@
+问题：
+ipa的上传，但是看不到
+
+1.图标问题
+图标出错就会消失，测试就是这个问题
+
+2. 权限问题，现在还没遇到
+这需要对代码进行设置，一般是权限问题，加入蓝牙，相机，相册权限
+相机权限： Privacy - Camera Usage Description App需要您的同意，才能访问相机
+相册权限： Privacy - Photo Library Usage DescriptionApp需要您的同意，才能访问相册
+
+通讯录权限： Privacy - Contacts Usage Description 是否允许此App访问你的通讯录？
+蓝牙权限：Privacy - Bluetooth Peripheral Usage Description 是否许允此App使用蓝牙？
+麦克风权限：Privacy - Microphone Usage Description是否允许此App使用你的麦克风？
+
+语音转文字权限：Privacy - Speech Recognition Usage Description 是否允许此App使用语音识别？
+日历权限：Privacy - Calendars Usage Description 是否允许此App使用日历？
+定位权限：Privacy - Location When In Use Usage Description 我们需要通过您的地理位置信息获取您周边的相关数据
+定位权限: Privacy - Location Always Usage Description 我们需要通过您的地理位置信息获取您周边的相关数据 
